@@ -1,9 +1,18 @@
 {
     "name": "royfee/support",
-    "version":"1.0.0",
+    "description": "A collection of commonly used PHP utility classes including string, array, filesystem helpers.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["support", "utility", "string", "array", "filesystem", "helpers"],
+    "version": "2.0.0",
     "autoload": {
         "psr-4": {
-            "royfee\\support\\": "src/"
+            "Royfee\\Support\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Royfee\\Support\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -12,17 +21,18 @@
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "ext-bcmath": "*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.93",
         "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^9.6"
     },
-    "scripts":{
+    "scripts": {
         "test": "phpunit -c phpunit.xml --colors=always",
         "cs-fix": "php-cs-fixer fix",
         "cs-check": "php-cs-fixer fix --dry-run",
-        "analyse":"phpstan analyse ./src -c phpstan.neon"
+        "analyse": "phpstan analyse ./src -c phpstan.neon"
     }
 }

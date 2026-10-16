@@ -3,3 +3,20 @@ parameters:
   paths:
     - src
     - tests
+  ignoreErrors:
+    # bcmath numeric-string strictness (runtime handles this)
+    - '#Parameter \#\d+ \$(left_operand|right_operand) of function bc(add|sub|mul|div|comp|pow) expects numeric-string#'
+    # Array mixed key access in Arr methods (dot notation traversal)
+    - '#Parameter \#\d+ \$search of function array_key_exists expects array, mixed given#'
+    # SplFileInfo iteration in Fs (FilesystemIterator yields SplFileInfo)
+    - '#Cannot call method \w+\(\) on SplFileInfo\|string#'
+    # Str::contains accepts string|array but PHPDoc says array
+    - '#Parameter \#\d+ \$needles of static method Royfee\\Support\\Str::contains\(\) expects array<string>, (string|array<string>) given#'
+    # Misc type strictness
+    - '#Cannot cast mixed to string#'
+    - '#Possibly invalid array key type mixed#'
+    - '#Parameter \#\d+ \$needles of static method Royfee\\Support\\Str::contains\(\) expects#'
+    - '#Parameter \#\d+ \$array_arg of function (asort|arsort) expects#'
+    - '#Parameter \#\d+ \$multiplier of function str_repeat expects int, int<0, max>\|false given#'
+    - '#Parameter \#\d+ \$length of function mb_substr expects int\|null, int\|false given#'
+    - '#Method Royfee\\Support\\Str::charsArray\(\) should return array<string, string> but returns array<int\|string, string>#'

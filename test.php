@@ -13,4 +13,4 @@ use royfee\support\Fs;
 //var_dump(Fs::allFiles('tests', 'php'));
 
 $str = false;
-echo  (int)  $str;
+echo  (int) $str;
